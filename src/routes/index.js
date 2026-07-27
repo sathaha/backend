@@ -8,7 +8,7 @@ const commentCtrl = require('../controllers/commentController');
 const categoryCtrl = require('../controllers/categoryController');
 const statsCtrl = require('../controllers/statsController');
 const timelineCtrl = require('../controllers/timelineController');
-const notifCtrl = require('../controllers/notificationController');
+const notifCtrl = require('../controllers/NotificationController');
 const pdfCtrl = require('../controllers/pdfController');
 const likeCtrl = require('../controllers/likeController');
 

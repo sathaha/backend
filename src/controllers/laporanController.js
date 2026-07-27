@@ -5,7 +5,7 @@ const fs = require('fs');
 const {
   sendNotification,
   sendNotificationToRole
-} = require('./notificationController');
+} = require('./NotificationController');
 
 // GET /api/laporan
 const getAll = async (req, res) => {
