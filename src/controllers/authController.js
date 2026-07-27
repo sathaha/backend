@@ -8,7 +8,7 @@ const response = require('../utils/response');
 
 const {
   sendNotificationToRole
-} = require('./NotificationController');
+} = require('./notificationController');
 
 const generateToken = (user) =>
   jwt.sign(
