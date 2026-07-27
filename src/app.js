@@ -9,7 +9,27 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // ─── Middleware ───────────────────────────────────────────
-app.use(cors());
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://frontend-j1wffh1oz-sathahas-projects.vercel.app/",
+];
+
+app.use(cors({
+  origin: (origin, callback) => {
+    console.log("Request Origin:", origin);
+
+    if (!origin || allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+
+    console.log("CORS BLOCKED:", origin);
+    return callback(new Error("Not allowed by CORS"));
+  },
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
+}));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
